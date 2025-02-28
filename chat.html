@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="chat-container">
+        <div id="top-controls">
+            <div class="buttons">
+                <button onclick="logout()">Logout</button>
+                <button onclick="clearChat()">Clear Chat</button>
+                <button onclick="removeAllData()">Clear All Data</button>
+            </div>
+            <h3 class="welcome">Welcome, <span id="userName">User</span></h3>
+        </div>
+        <h2>Real-Time Chat</h2>
+        <div id="container">
+            <div id="users">
+                <h3>Users</h3>
+                <ul id="userList"></ul>
+            </div>
+            <div id="chat">
+                <h3>Chat with: <span id="chatWith">No one</span></h3>
+                <div id="messages"></div>
+                <div id="message-container">
+                    <input type="text" id="message" placeholder="Type your message...">
+                    <button id="sendButton" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+            <div id="noUserMessage" style="display:none;">
+                <h3>Please select a user to chat with</h3>
+            </div>
+        </div>
+    </div>
+    <script src="chat.js"></script>
+</body>
+
+</html>

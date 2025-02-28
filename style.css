@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+#top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #128C7E;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#top-controls .buttons {
+    display: flex;
+    gap: 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#top-controls .welcome {
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+#top-controls button:hover {
+    background-color: #e67e22;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #34495e;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+}
+
+#container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#users {
+    width: 25%;
+    background-color: #ecf0f1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#userList {
+    list-style: none;
+    padding: 0;
+}
+
+#userList li {
+    padding: 10px;
+    background-color: #bdc3c7;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#userList li:hover {
+    background-color: #95a5a6;
+}
+
+#chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    padding: 20px;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    background: url('img/chat\ theme.png') no-repeat center center;
+    background-size: cover;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 100%;
+}
+
+#messages .sent {
+    background: #DCF8C6;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 15px 15px 0 15px;
+    align-self: flex-end;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 15px;
+    position: relative;
+}
+
+#messages .received {
+    background: white;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 15px 15px 15px 0;
+    align-self: flex-start;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 15px;
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+
+
+#messages .sent::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid #DCF8C6;
+    border-right: 8px solid transparent;
+}
+
+#messages .received::after {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid white;
+    border-left: 8px solid transparent;
+}
+
+#message {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+}
+
+
+
+button {
+    background-color: #2ecc71;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    #users, #chat {
+        width: 100%;
+        padding: 10px;
+    }
+    #messages {
+        max-height: 300px;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+#top-controls h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    text-transform: capitalize;
+}
+
+#login-container {
+    max-width: 400px;
+    margin: 10% auto;
+    padding: 30px;
+    background: linear-gradient(to bottom, #ffffff, #f2f3f7);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#login-container h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#login-container input {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+#login-container input:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+}
+
+#login-container button:hover {
+    background-color: #27ae60;
+}
+
+.time {
+    font-size: 11px;
+    font-weight: 100;
+}
+
+#message-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+#sendButton {
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#sendButton:hover {
+    background-color: #1EBE5D;
+}
+
+
+/* Target the entire scrollbar */
+::-webkit-scrollbar {
+    width: 6px;  /* Adjust the width */
+    height: 6px; /* For horizontal scrollbar */
+  }
+  
+  /* Handle (the moving part) */
+  ::-webkit-scrollbar-thumb {
+    background: #888;  /* Change color */
+    border-radius: 10px; /* Round the edges */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Track (the area the scrollbar moves along) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  
+  /* #noUserMessage {
+    display: none;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #34495e;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+#noUserMessage h3 {
+    margin: 0;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+} */
+
+#noUserMessage {
+    display: none; /* Hide initially */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Fill the parent container */
+    width: 100%; /* Ensure it takes full width */
+    position: relative; /* Optional: To position it absolutely within its parent */
+    top: 200px; /* Ensure it starts from the top of the parent */
+}
+
+#noUserMessage h3 {
+    font-size: 29px;
+    color: #393939;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+  
+
